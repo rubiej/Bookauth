@@ -19,7 +19,7 @@ export default function Dashboard() {
 
   const fetchBooks = async () => {
     try {
-      const res = await fetch("process.env.NEXT_PUBLIC_API_BASE}/api/books", {
+      const res = await fetch("${process.env.NEXT_PUBLIC_API_BASE}/api/books", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
