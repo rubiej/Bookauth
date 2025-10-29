@@ -19,8 +19,8 @@ export default function Dashboard() {
 
   const fetchBooks = async () => {
     try {
-      const res = await fetch("${process.env.NEXT_PUBLIC_API_BASE}/api/books", {
-        headers: { Authorization: `Bearer ${token}` },
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/books`, {
+         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
       setBooks(data);
@@ -41,7 +41,7 @@ export default function Dashboard() {
 
   const handleAdd = async (e) => {
     e.preventDefault();
-    const res = await fetch("process.env.NEXT_PUBLIC_API_BASE}/api/books", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/books`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -62,7 +62,7 @@ export default function Dashboard() {
 
   const handleEdit = async (e) => {
     e.preventDefault();
-    const res = await fetch(`process.env.NEXT_PUBLIC_API_BASE}/api/books/${editingId}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/books/${editingId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -77,7 +77,7 @@ export default function Dashboard() {
   };
 
   const handleDelete = async (id) => {
-    const res = await fetch(`process.env.NEXT_PUBLIC_API_BASE}/api/books/${id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/books/${id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     });
