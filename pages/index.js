@@ -11,7 +11,7 @@ export default function Home() {
     e.preventDefault();
     const endpoint = mode === "login" ? "/login" : "/register";
 
-    const res = await fetch(`http://localhost:3001${endpoint}`, {
+    const res = await fetch(`https://booklist-1-aghg.onrender.com${endpoint}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),
